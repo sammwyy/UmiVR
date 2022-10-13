@@ -10,6 +10,7 @@ public class ModelManager : MonoBehaviour
 
     void Awake()
     {
+        ModelLoaderRegistry.Register(new AnimageModelLoader());
         ModelLoaderRegistry.Register(new Live2DModelLoader());
     }
 

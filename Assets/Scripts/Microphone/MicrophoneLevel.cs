@@ -2,6 +2,16 @@ using UnityEngine;
 
 public class MicrophoneLevel : MonoBehaviour
 {
+    private static MicrophoneLevel instance;
+
+    public static MicrophoneLevel Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     private int _samples = 12;
     private AudioClip _clip = null;
 
@@ -97,6 +107,11 @@ public class MicrophoneLevel : MonoBehaviour
         {
             this._threshold = value;
         }
+    }
+
+    void Awake()
+    {
+        MicrophoneLevel.instance = this;
     }
 
     // Start is called before the first frame update

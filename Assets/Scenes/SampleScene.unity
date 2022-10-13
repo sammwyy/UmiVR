@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -519,6 +520,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4087dfc0d0f9d34e8d6dd67ba258e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &689567579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1381,7 @@ GameObject:
   - component: {fileID: 1546896056}
   - component: {fileID: 1546896055}
   - component: {fileID: 1546896057}
+  - component: {fileID: 1546896058}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: MainCamera
@@ -1446,13 +1460,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CaptureDevice: 0
-  ResizeMode: 0
+  ResizeMode: 1
   Timeout: 1000
   MirrorMode: 0
   DoubleBuffering: 0
   EnableVSync: 0
   TargetFrameRate: 60
   HideWarnings: 1
+--- !u!114 &1546896058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546896053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4087dfc0d0f9d34e8d6dd67ba258e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593512164
 GameObject:
   m_ObjectHideFlags: 0

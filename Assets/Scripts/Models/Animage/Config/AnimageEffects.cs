@@ -1,5 +1,5 @@
 public class AnimageEffects
 {
     public bool grayscale = false;
-    public int shake = 0;
+    public bool shake = false;
 }

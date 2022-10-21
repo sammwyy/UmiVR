@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
 
     void Movement()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             float speed = (zoom * 4) * Time.deltaTime;
 

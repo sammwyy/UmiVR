@@ -20,24 +20,32 @@ public class AnimageSpriteController : MonoBehaviour
             this._sprite.material.shader = Shader.Find("Thor/Sprites/GreyscaleShader");
         }
 
-        if (Effects.shake)
+        if (Effects.shake > 0)
         {
-            InvokeRepeating("Shake", 0, .05f);
+            InvokeRepeating("Shake", 0, Effects.shakeTick);
         }
+    }
+
+    float GetModulusRange(float range)
+    {
+        range = Mathf.Abs(range);
+        return Random.Range(range * -1, range);
     }
 
     void Shake()
     {
         this._targetPos = new Vector3(this._startingPos.x, this._startingPos.y, this._startingPos.z);
-        this._targetPos.x += Random.Range(-0.2f, 0.2f);
-        this._targetPos.y += Random.Range(-0.2f, 0.2f);
+
+        float range = Effects.shake;
+        this._targetPos.x += GetModulusRange(range);
+        this._targetPos.y += GetModulusRange(range);
     }
 
     void Update()
     {
         if (_targetPos != null)
         {
-            transform.position = Vector3.Lerp(transform.position, _targetPos, Time.deltaTime * 15);
+            transform.position = Vector3.Lerp(transform.position, _targetPos, Time.deltaTime * Effects.shakeSpeed);
         }
     }
 }

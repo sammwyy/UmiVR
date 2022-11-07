@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +36,12 @@ public class AvatarSelectorUI : MonoBehaviour
             modelItem.transform.localPosition = new Vector3(-paddingX, -paddingY, 0);
             modelItem.GetComponent<RawImage>().texture = IMG2Sprite.instance.LoadTexture(thumbnail);
 
+            Button button = modelItem.GetComponentInChildren<Button>();
+            button.onClick.AddListener(() =>
+            {
+                _modelManager.LoadModel(model);
+            });
+
             TextMeshProUGUI[] texts = modelItem.GetComponentsInChildren<TextMeshProUGUI>();
             foreach (TextMeshProUGUI text in texts)
             {
@@ -58,8 +62,6 @@ public class AvatarSelectorUI : MonoBehaviour
             {
                 x++;
             }
-
-            Debug.Log(paddingX + " - " + paddingY);
         }
     }
 

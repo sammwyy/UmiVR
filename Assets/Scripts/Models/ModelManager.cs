@@ -7,6 +7,22 @@ public class ModelManager : MonoBehaviour
 {
     [SerializeField]
     private List<Model> models;
+    private GameObject currentModel;
+
+    public void LoadModel(Model model)
+    {
+        if (currentModel != null)
+        {
+            Destroy(currentModel);
+        }
+
+        this.currentModel = model.Spawn();
+    }
+
+    public void LoadModel(int index)
+    {
+        this.LoadModel(models[index]);
+    }
 
     void Awake()
     {
@@ -18,8 +34,7 @@ public class ModelManager : MonoBehaviour
     {
         this.models = new List<Model>();
         this.ScanDirectoryForModels();
-
-        this.models[0].Spawn();
+        this.LoadModel(0);
     }
 
     public List<Model> Models

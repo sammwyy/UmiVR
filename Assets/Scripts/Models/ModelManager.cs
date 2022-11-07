@@ -22,6 +22,14 @@ public class ModelManager : MonoBehaviour
         this.models[0].Spawn();
     }
 
+    public List<Model> Models
+    {
+        get
+        {
+            return models;
+        }
+    }
+
     public string GetModelDirectory()
     {
         string directory = Path.Combine(Application.persistentDataPath, "models");

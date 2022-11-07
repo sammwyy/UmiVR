@@ -18,6 +18,7 @@ public class MicrophoneLevel : MonoBehaviour
     private string _device = null;
     private int _percent = 0;
     private int _threshold = 10;
+    private string[] deviceList;
 
     float GetLevel()
     {
@@ -117,7 +118,8 @@ public class MicrophoneLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.SetDevice(1);
+        deviceList = Devices;
+        this.SetDevice(0);
     }
 
     // Update is called once per frame

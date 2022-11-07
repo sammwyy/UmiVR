@@ -19,6 +19,11 @@ public class AnimageModel : Model
         return this._config;
     }
 
+    public string GetPath()
+    {
+        return this._path;
+    }
+
     public GameObject Spawn()
     {
         GameObject container = new GameObject(this._config.Name);

@@ -10,11 +10,14 @@ public class AnimageSpriteController : MonoBehaviour
     private Vector3 _startingPos;
     private Vector3 _targetPos;
 
-    void Start()
+    void Awake()
     {
         this._sprite = GetComponent<SpriteRenderer>();
         this._startingPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
 
+    void Start()
+    {
         if (Effects.grayscale)
         {
             this._sprite.material.shader = Shader.Find("Thor/Sprites/GreyscaleShader");
@@ -47,5 +50,15 @@ public class AnimageSpriteController : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, _targetPos, Time.deltaTime * Effects.shakeSpeed);
         }
+    }
+
+    public void Show()
+    {
+        _sprite.color = Color.white;
+    }
+
+    public void Hide()
+    {
+        _sprite.color = new Color(255, 255, 255, 0);
     }
 }

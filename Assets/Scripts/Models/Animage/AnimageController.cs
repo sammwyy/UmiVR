@@ -53,11 +53,11 @@ public class AnimageController : MonoBehaviour
         {
             if (this._current != null)
             {
-                this._current.gameObject.SetActive(false);
+                this._current.Hide();
             }
 
             this._current = sprite;
-            sprite.gameObject.SetActive(true);
+            sprite.Show();
         }
 
         this.MicLevel = this.microphoneLevel.Percent;
@@ -66,6 +66,6 @@ public class AnimageController : MonoBehaviour
     public void AddSprite(AnimageSpriteController sprite)
     {
         sprites.Add(sprite);
-        sprite.gameObject.SetActive(false);
+        sprite.Hide();
     }
 }

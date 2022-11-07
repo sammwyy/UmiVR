@@ -6,18 +6,23 @@ using UnityEngine;
 
 public class Live2DModel : Model
 {
-    private string _directory;
+    private string _path;
     private ModelConfig _config;
 
-    public Live2DModel(string directory, ModelConfig config)
+    public Live2DModel(string path, ModelConfig config)
     {
-        this._directory = directory;
+        this._path = path;
         this._config = config;
     }
 
     public ModelConfig GetConfig()
     {
         return this._config;
+    }
+
+    public string GetPath()
+    {
+        return this._path;
     }
 
     static object BuiltinLoadAssetAtPath(Type assetType, string absolutePath)
@@ -43,7 +48,7 @@ public class Live2DModel : Model
 
     public GameObject Spawn()
     {
-        string path = Path.Combine(this._directory, this._config.Files.Model);
+        string path = Path.Combine(this._path, this._config.Files.Model);
 
         CubismModel3Json model3Json = CubismModel3Json.LoadAtPath(path, BuiltinLoadAssetAtPath);
         CubismModel model = model3Json.ToModel();
